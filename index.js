@@ -18,7 +18,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         break;
       case "get":
         const contact = await contacts.getContactById(id);
-        if (!contact) throw new Error(`Contact with id = ${id} not found`);
+        if (!contact) throw new Error(`null`);
         console.log(contact);
         break;
       case "add":
@@ -32,7 +32,7 @@ async function invokeAction({ action, id, name, email, phone }) {
       case "remove":
         const removedContact = await contacts.removeContact(id);
         if (!removedContact)
-          throw new Error(`Contact with id = ${id} not found`);
+          throw new Error(`null`);
         console.log(removedContact);
         break;
       default:
